@@ -1,0 +1,287 @@
+@keyframes example {
+    from {
+        top: 0px;
+        background-color: lightpink;
+    }
+
+    to {
+        top: 10px;
+    }
+}
+
+td:hover {
+    animation-name: example;
+    animation-duration: .25s;
+    animation-delay: .25s;
+    animation-fill-mode: backwards;
+}
+
+td {
+    border-radius: .5rem;
+}
+
+.bingo-cabecalho {
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    font-size: x-large;
+}
+
+.num-cartela {
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    text-justify: center;
+    padding-bottom: 1rem; 
+    padding-top: 1rem; 
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: x-large;
+}
+
+.coluna-b {
+    background-color: transparent;
+    text-align: center;
+    border-style: solid;
+}
+
+.coluna-i {
+    background-color: transparent;
+    text-align: center;
+    border-style: solid;
+}
+
+.coluna-n {
+    background-color: transparent;
+    text-align: center;
+    border-style: solid;
+}
+
+.coluna-g {
+    background-color: transparent;
+    text-align: center;
+    border-style: solid;
+}
+
+.coluna-o {
+    background-color: transparent;
+    text-align: center;
+    border-style: solid;
+}
+
+.centro-n {
+    border-style: none;
+}
+
+.rounded-4 {
+    border-radius: .5rem;
+}
+
+.rounded-5 {
+    border-radius: .75rem;
+}
+
+.rounded-6 {
+    border-radius: 1rem;
+}
+
+.marcado {
+    color: red;
+    background-image: url("../img/circle.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.bingo {
+    background-color: gold;
+}
+
+.sorteados {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-content: flex-end;
+    justify-items: center;
+}
+
+.bola-sorteada {
+    border-style: solid;
+    border-width: 2px;
+    border-color: wheat;
+    border-radius: 100%;
+    padding: 2rem;
+    background: radial-gradient(circle at center, white 0, blanchedalmond, silver 100%);
+    font-weight: bold;
+    position: relative;
+}
+
+.text-num-sorteado {
+    position:  absolute;
+    top: 1.5rem;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    color: black;
+    font-size: x-large;
+ }
+
+ .text-col-sorteado {
+    position:  absolute;
+    top: .5rem;
+    left: 0;
+    bottom: 1.5rem;
+    right: 0;
+    text-align: center;
+    color: black;
+    font-size: medium;
+ }
+
+/* Exercício 6:
+    
+    O media query (@media) é uma forma de fazer um "if" da largura dispositivo.
+    Isso que dá a responsividade ao seu sistema web e permite que o conteúdo que você 
+    cria seja apresentado de forma adequada nos mais diversos dispositivos.
+
+    Siga os passos:
+        1. Com o DevTools do Chrome aberto, pressiona Crtl+Shift+M. 
+        2. Passe para a visualização de um Mobile.
+        3. Escolha na lista de dispositivos o Responsive.
+        4. Coloque a largura em 429px.
+        5. Agora "estique" a largura até 767px.
+
+
+    Leia o artigo abaixo e entenda como as bolas sorteadas saem da linha horizontal acima da cartela
+    e vão para vertical à esquerda da cartela.
+    https://dev.to/domagojvidovic/a-ridiculously-simple-way-for-creating-responsive-web-apps-1f43
+
+    Responda: Quais propriedades CSS que permitiram a mudança de orientação das bolas sorteadas?
+    
+    Segue mais referência sobre estas propriedades. 
+    https://www.origamid.com/projetos/css-grid-layout-guia-completo/
+*/
+
+/*  Exercício 7:    
+
+    Agora vamos abrir o bingo no seu celular.
+    Leia a tutorial do laragon para usar o ngrok para conseguir acessar o seu projeto no celular.
+    https://forum.laragon.org/topic/88/allow-outside-other-devices-phones-tablets-to-access-your-local-server-using-ngrok
+    Veja se ficou sem barras de rolagem tanto horizontal como vertical.
+    Se ficou, o design está responsivo para seu desktop e seu dispositivo!
+
+    Ao concluir, vá para o exercício 8 logo abaixo.
+*/
+ 
+@media (min-width: 572px) {
+    .sorteados {
+        grid-template-columns: 1fr;
+    }
+
+    .num-sorteado {
+        margin: 2px;
+    }
+}
+
+/* Exercício 8:
+    Descubra o que significa as unidades "rem" e "em":
+    https://www.youtube.com/watch?v=-31wF29I0gQ
+    https://dev.to/mbthales/pt-br-unidades-relativas-rem-e-em-4d8j
+    https://www.nickolasjoe.com/qual-a-diferenca-entre-pixel-em-e-rem-entenda-essas-unidades-css/
+    
+    Responda: Como as unidades rem e em ajudam na responsividade de um sistema Web?
+    (Responda com suas palavras, com seu entendimento, faça testes, altere os valores e veja o que acontece)
+
+    Ao concluir vá para o exercício 9, logo abaixo.
+*/
+
+@media (max-width: 767px) {
+    .sorteados {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .num-sorteado {
+        margin: 20%;
+        text-align: center;
+        padding: 2rem;
+        padding-bottom: 2rem;
+    }
+}
+
+@media (min-width: 768px) {
+   .num-sorteado {
+        text-align: center;
+        padding: 2rem;
+        width: 2rem;
+    }
+}
+
+
+
+ /* Exercício 9:
+ 
+    Siga os passos:
+        1. Com o DevTools do Chrome aberto, pressiona Crtl+Shift+M. 
+        2. Passe para a visualização de um Mobile.
+        3. Escolha na lista de dispositivos o Responsive.
+        4. Altere a largura (width) para 429 px.
+        5. Agora altere a largura para 427px.
+    
+    Responda: 
+    a) Qual foi a mudança que aconteceu após passar para 427px de largura?
+    b) Quais as propriedades CSS e em quais classes no media query abaixo permitiram esta mudança?
+
+*/
+
+@media (max-width: 427px) {
+    .sorteados {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .bingo-cabecalho {
+        font-size: large;
+    }
+    
+    .num-cartela {
+        font-size: large;
+    }
+
+    .text-col-sorteado {
+        font-size: smaller;
+        top: .5rem;
+        left: 0;
+        bottom: 1rem;
+        right: 0;
+    }
+
+    .text-num-sorteado {
+        font-size: small;
+        top: 1.5rem;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+    .num-sorteado {
+        border-style: solid;
+        border-width: 1px;
+        border-color: wheat;
+        border-radius: 100%;
+        padding: .5rem;
+        background: radial-gradient(circle at center, white 0, blanchedalmond, silver 100%);
+        font-weight: bold;
+        position: relative;
+    }
+}
+
+ /* Exercício 10:
+ 
+    Siga os passos:
+        1. Com o DevTools do Chrome aberto, pressiona Crtl+Shift+M. 
+        2. Passe para a visualização de um Mobile.
+        3. Escolha na lista de dispositivos o Responsive.
+        4. Altere para o dispositivo Nokia Lumia 520.
+    
+    Responda: 
+    a) Qual a largura em px deste dispositivo?
+    b) Crie uma media query para a largura deste dispositivo e ajuste as classes que achar 
+       necessário para que a barra de rolagem horizontal desapareça.
+*/
+
