@@ -81,13 +81,30 @@ class CartelaClass {
     // Ao concluir vá para o exercício 5 no cartela.html na <div class="sorteados">.
     
     sortearNum(min, max) {
+
         return Math.floor(Math.random() * (max - min) + min) 
     }
     
-    sortearNumero(linha) {
+    sortearNumero() {
         var sn = this.sortearNum(1,76)
-        var element = document.getElementById("sn"+linha)
-        element.innerHTML = sn
+        console.log("sn = " + sn)
+        if(sn <= 15){
+            var sc = "b";
+            console.log("sc = " + sc)
+        }else if(sn >15 && sn <=30){
+            var sc = "i";
+            console.log("sc = " + sc)
+        }else if(sn >30 && sn <=45){
+            var sc = "n";
+            console.log("sc = " + sc)
+        }else if(sn >45 && sn <=60){
+            var sc = "g";
+            console.log("sc = " + sc)
+        }else if(sn >60 && sn <=75){
+            var sc = "o";
+            console.log("sc = " + sc)
+        }
+        
     }
 
     confereCartela(numMarcadosCartela, numSorteados) {
